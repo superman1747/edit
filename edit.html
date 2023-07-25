@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Foto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+
+        .app-container {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .upload-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .upload-image {
+            max-width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <h1>Edit Foto</h1>
+        <form action="/apply_edit" method="post">
+            <input type="hidden" name="file_path" value="{{ file_path }}">
+            <label for="color_option">Pilih Efek Warna:</label>
+            <select name="color_option" id="color_option">
+                <option value="grayscale">Grayscale</option>
+                <option value="sepia">Sepia</option>
+                <option value="invert">Invert</option>
+                <option value="red">Merah</option>
+                <option value="blue">Biru</option>
+                <option value="green">Hijau</option>
+                <br>
+            </select>
+                <input type="submit" value="Terapkan Efek">
+    
+            <form action="/apply_edit" method="post">
+                    <input type="hidden" name="file_path" value="{{ edited_file_path }}">
+                    <label class="sharpness-label" for="sharpness_factor">Tajamness:</label>
+                    <input type="range" name="sharpness_factor" min="0" max="2" step="0.1" value="{{ initial_sharpness }}">
+            </form>
+        </form>
+
+        <div id="instructions">
+            <p>Pilih warna yang ingin Anda edit dan tambahkan ketajaman warna, dan kemudian klik tombol "terapkan efek" untuk memulai proses.</p>
+        </div>
+
+    </div>
+    
+    
+    <script>
+        function previewFile(event) {
+            var input = event.target;
+            var preview = document.getElementById('preview');
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil Edit Foto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .image-wrapper {
+            text-align: center;
+            width: 45%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .image-info {
+            text-align: center;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .sharpness-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .sharpness-label {
+            margin-right: 10px;
+        }
+
+        input[type="range"] {
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .download-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .download-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .download-link a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-info">
+        <h2>Succes:</h2>
+        <p>{{ image_description }}</p>
+        <p>Terima kasih atas kesempatan untuk memberikan hasil edit foto ini. Semoga gambar ini dapat bermanfaat dan memberikan keindahan lebih pada momen yang diabadikan.</p>
+   
+    </div>
+    <div class="download-link">
+        <a href="{{ edited_file_path }}" download>Unduh Gambar Hasil Edit</a>
+    </div>
+</body>
+</html>

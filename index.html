@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aplikasi Pengedit Foto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .app-container {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #instructions {
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        #benefits {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .benefit-item {
+            margin-bottom: 10px;
+        }
+
+        .app-cta {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <h1>Selamat Datang di Aplikasi Pengedit Foto</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file-input">
+            <input type="submit" value="Unggah Foto">
+        </form>
+        <div id="instructions">
+            <p>Pilih gambar yang ingin Anda edit, dan kemudian klik tombol "Unggah Foto" untuk memulai proses.</p>
+        </div>
+        <div id="benefits">
+            <h2>Manfaat Aplikasi:</h2>
+            <ul>
+                <li class="benefit-item">Mengedit foto dengan berbagai efek warna: sepia, merah, biru, hijau, dsb.</li>
+                <li class="benefit-item">Mengubah foto menjadi grayscale atau menciptakan efek negatif (invert).</li>
+                <li class="benefit-item">Menambahkan efek tajamness pada foto hasil edit.</li>
+                <li class="benefit-item">Mudah digunakan dan hasil edit dapat langsung diunduh.</li>
+            </ul>
+        </div>
+        <div class="app-cta">
+            <p>Siap untuk mengedit foto Anda? Unggah foto sekarang!</p>
+        </div>
+    </div>
+</body>
+</html>
